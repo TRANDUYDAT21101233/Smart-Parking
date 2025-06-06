@@ -7,11 +7,10 @@ model = SAM("sam2.1_b.pt")
 # Display model information (optional)
 model.info()
 
-input_image = "image/car_10004.png"
+input_image = "dataset/dataset/car/images/val/car_10006.png"
 # Run inference
 
-results = model(input_image, points= [[499, 577], [763, 494], [845, 243], [853, 737], [1114, 701], [1380, 418], [1590, 226], [1761, 564], [1655, 567], [1495, 568], [1382, 577], [1446, 802], [1531, 799], [1589, 797], [1651, 797], [1722, 794]])
-
+results = model(input_image, points= [[183, 551], [333, 560], [460, 600], [704, 551], [819, 302], [1067, 588]])
 
 image = results[0].plot(labels=False)
 

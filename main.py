@@ -8,10 +8,10 @@ print(torch.cuda.is_available())
 print(torchvision.__version__)
 
 
-model = YOLO('yolo11n.pt')
+model = YOLO('runs/train/weights/best.pt')
 
-
-cap = cv2.VideoCapture(0)
+source = 'Parking_Lot.mp4'
+cap = cv2.VideoCapture(source)
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
