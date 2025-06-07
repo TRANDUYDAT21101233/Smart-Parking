@@ -39,3 +39,31 @@ We then **integrated** the fine-tuned model back into YOLO's detection pipeline,
 ```bash
 git clone https://github.com/ultralytics/ultralytics.git
 ```
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+3. Run detection:
+
+```bash
+python main.py
+```
+
+📊 Results
+Pre-trained YOLO model (original): ~5% mAP on our dataset
+
+Fine-tuned YOLO (transfer learning): ~85% mAP
+
+Real-time FPS maintained: ~20–25 FPS (depending on hardware)
+
+📷 Demo
+
+Detection of parked cars with custom-trained YOLO model
+
+📚 References
+YOLOv11: https://github.com/ultralytics/ultralytics
+
+SAHI: https://github.com/obss/sahi
+
+Supervision: https://github.com/roboflow/supervision
