@@ -23,7 +23,11 @@ When testing with the pre-trained `yolo11.pt` model on our parking lot video dat
 ![using base model](runs/detect/predict/predict_yolo11n.png)
 
 Alternative attempts using **SAHI** and **Supervision** post-processing were also unsatisfactory, with no significant improvement.
-![using SAHI](runs/detect/predict/sahi_output.png) | ![using supervision](runs/detect/predict/supervision_output.png)
+
+<p align="center">
+  <img src="runs/detect/predict/sahi_output.png" width="45%" />
+  <img src="runs/detect/predict/supervision_output.png" width="45%" />
+</p>
 
 ## ✅ Our Solution: Transfer Learning
 
