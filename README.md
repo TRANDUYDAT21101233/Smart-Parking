@@ -20,7 +20,7 @@ We initially adopted **YOLO** (You Only Look Once) for object detection due to i
 When testing with the pre-trained `yolo11.pt` model on our parking lot video data, we found that **YOLO misclassified or failed to detect** vehicles correctly. Issues included:
 - False positives (detecting non-vehicles as cars)
 - Missed detections in low-light or occluded areas
-
+![using base model](runs/detect/predict/predict_yolo11n.png)
 Alternative attempts using **SAHI** and **Supervision** post-processing were also unsatisfactory, with no significant improvement.
 
 ## ✅ Our Solution: Transfer Learning
