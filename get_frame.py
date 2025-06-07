@@ -2,7 +2,7 @@ import cv2
 
 
 
-source = 'Parking_Lot.mp4'
+source = 'demo/parking_management.avi'
 cap = cv2.VideoCapture(source)
 if not cap.isOpened():
     print("Cannot open camera")
@@ -14,7 +14,7 @@ while True:
         print("Cannot read camera frame")
         break
 
-    cv2.imwrite('image/parking_lot.jpg', frame)
+    cv2.imwrite('image/demo.jpg', frame)
     break
 cap.release()
 cv2.destroyAllWindows()
