@@ -21,7 +21,9 @@ When testing with the pre-trained `yolo11.pt` model on our parking lot video dat
 - False positives (detecting non-vehicles as cars)
 - Missed detections in low-light or occluded areas
 
-<img src="runs/detect/predict/predict_yolo11n.png" alt="using base model" width="60%">
+<p align="center">
+  <img src="runs/detect/predict/predict_yolo11n.png" alt="using base model" width="60%">
+</p>
 
 Alternative attempts using **SAHI** and **Supervision** post-processing were also unsatisfactory, with no significant improvement.
 
@@ -36,6 +38,10 @@ To address this, we applied **Transfer Learning** using YOLO:
 - We collected and annotated a **custom dataset** of vehicles in the actual parking lot scenario.
 - We fine-tuned the YOLO model (YOLOv11) using this dataset to better align with the domain-specific characteristics of our environment (e.g., camera angle, vehicle types).
 - After training, the model showed **significant improvements** in detection accuracy.
+
+<p align="center">
+  <img src="runs/detect/predict/pred_bestpt.png" alt="using base model" width="60%">
+</p>
 
 We then **integrated** the fine-tuned model back into YOLO's detection pipeline, maintaining YOLO's real-time performance while achieving **higher precision**.
 
@@ -67,7 +73,7 @@ Real-time FPS maintained: ~20–25 FPS (depending on hardware)
 
 ## 📷 Demo
 
-Detection of parked cars with custom-trained YOLO model
+[output_demo.mp4](parking management.avi)
 
 ## 📚 References
 
