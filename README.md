@@ -50,18 +50,20 @@ pip install -r requirements.txt
 python main.py
 ```
 
-📊 Results
+## 📊 Results
+
 Pre-trained YOLO model (original): ~5% mAP on our dataset
 
 Fine-tuned YOLO (transfer learning): ~85% mAP
 
 Real-time FPS maintained: ~20–25 FPS (depending on hardware)
 
-📷 Demo
+## 📷 Demo
 
 Detection of parked cars with custom-trained YOLO model
 
-📚 References
+## 📚 References
+
 YOLOv11: https://github.com/ultralytics/ultralytics
 
 SAHI: https://github.com/obss/sahi
