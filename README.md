@@ -73,7 +73,7 @@ Real-time FPS maintained: ~20–25 FPS (depending on hardware)
 
 ## 📷 Demo
 
-[output_demo.mp4](parking management.avi)
+[📹 Watch video](demo/parking_management.avi)
 
 ## 📚 References
 
