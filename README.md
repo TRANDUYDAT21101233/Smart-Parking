@@ -47,21 +47,42 @@ We then **integrated** the fine-tuned model back into YOLO's detection pipeline,
 
 ## 🚀 How to Run
 
-1. Clone this repository:
+1. **Clone this repository**:
 
-```bash
-git clone https://github.com/ultralytics/ultralytics.git
-```
-2. Install dependencies:
+    ```bash
+    git clone https://github.com/ultralytics/ultralytics.git
+    ```
 
-```bash
-pip install -r requirements.txt
-```
-3. Run detection:
+2. **Install dependencies**:
 
-```bash
-python main.py
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Extract frames from the input video**:
+
+    Run the script below to extract frames from the input video (by default, frames will be saved to the `frames/` directory):
+
+    ```bash
+    python get_frame.py
+    ```
+
+4. **Generate parking slot coordinates**:
+
+    This script allows you to define the parking slot positions manually and saves them into a file named `parking_slots.json`:
+
+    ```bash
+    python get_carpk_slot.py
+    ```
+
+5. **Run the main detection script**:
+
+    After generating frames and parking slot data, you can run the main detection program:
+
+    ```bash
+    python main.py
+    ```
+
 
 ## 📊 Results
 
