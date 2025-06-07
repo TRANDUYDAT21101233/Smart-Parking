@@ -1,5 +1,5 @@
 import cv2
-from ultralytics import YOLO
+from ultralytics import solutions
 import torch
 import torchvision
 
@@ -7,44 +7,31 @@ print(torch.__version__)
 print(torch.cuda.is_available())
 print(torchvision.__version__)
 
+# Video capture
+cap = cv2.VideoCapture("Parking_Lot.mp4")
+assert cap.isOpened(), "Error reading video file"
 
-model = YOLO('runs/train/weights/best.pt')
+# Video writer
+w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
+video_writer = cv2.VideoWriter("parking management.avi", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h))
 
-source = 'Parking_Lot.mp4'
-cap = cv2.VideoCapture(source)
-if not cap.isOpened():
-    print("Cannot open camera")
-    exit()
+# Initialize parking management object
+parking_manager = solutions.ParkingManagement(
+    model="runs/train/weights/best.pt",  # path to model file
+    json_file="bounding_boxes.json",  # path to parking annotations file
+)
 
-while True:
+while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
-        print("Cannot read camera frame")
         break
 
-    results = model(frame)
-    for result in results:
-        bboxes = result.boxes.xyxy
-        confs = result.boxes.conf
-        names = [result.names[cls.item()] for cls in result.boxes.cls.int()]
+    results = parking_manager(frame)
 
-        for i, bbox in enumerate(bboxes):
-            x1, y1, x2, y2 = bbox.int().tolist()
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
-            confidence = confs[i]
-            class_name = names[i]
+    # print(results)  # access the output
 
-            text = f'{class_name} {confidence:.2f}'
-
-            cv2.putText(frame, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-    cv2.imshow('frame', frame)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    video_writer.write(results.plot_im)  # write the processed frame.
 
 cap.release()
-cv2.destroyAllWindows()
-
-
-
+video_writer.release()
+cv2.destroyAllWindows()  # destroy all opened windows
