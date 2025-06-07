@@ -61,7 +61,7 @@ We then **integrated** the fine-tuned model back into YOLO's detection pipeline,
 
 3. **Extract frames from the input video**:
 
-    Run the script below to extract frames from the input video (by default, frames will be saved to the `frames/` directory):
+    Run the script below to extract frames from the input video (by default, frames will be saved to the `image/` parking_lot.jpg):
 
     ```bash
     python get_frame.py
@@ -69,7 +69,7 @@ We then **integrated** the fine-tuned model back into YOLO's detection pipeline,
 
 4. **Generate parking slot coordinates**:
 
-    This script allows you to define the parking slot positions manually and saves them into a file named `parking_slots.json`:
+    This script allows you to define the parking slot positions manually and saves them into a file named `bounding_boxes.json`:
 
     ```bash
     python get_carpk_slot.py
