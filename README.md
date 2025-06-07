@@ -40,28 +40,49 @@ To address this, we applied **Transfer Learning** using YOLO:
 - After training, the model showed **significant improvements** in detection accuracy.
 
 <p align="center">
-  <img src="runs/detect/predict/pred_bestpt.png" alt="using base model" width="60%">
+  <img src="runs/detect/predict/pred_bestpt.png" alt="using best model" width="60%">
 </p>
 
 We then **integrated** the fine-tuned model back into YOLO's detection pipeline, maintaining YOLO's real-time performance while achieving **higher precision**.
 
 ## 🚀 How to Run
 
-1. Clone this repository:
+1. **Clone this repository**:
 
-```bash
-git clone https://github.com/ultralytics/ultralytics.git
-```
-2. Install dependencies:
+    ```bash
+    git clone https://github.com/ultralytics/ultralytics.git
+    ```
 
-```bash
-pip install -r requirements.txt
-```
-3. Run detection:
+2. **Install dependencies**:
 
-```bash
-python main.py
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Extract frames from the input video**:
+
+    Run the script below to extract frames from the input video (by default, frames will be saved to the `image/` parking_lot.jpg):
+
+    ```bash
+    python get_frame.py
+    ```
+
+4. **Generate parking slot coordinates**:
+
+    This script allows you to define the parking slot positions manually and saves them into a file named `bounding_boxes.json`:
+
+    ```bash
+    python get_carpk_slot.py
+    ```
+
+5. **Run the main detection script**:
+
+    After generating frames and parking slot data, you can run the main detection program:
+
+    ```bash
+    python main.py
+    ```
+
 
 ## 📊 Results
 
@@ -73,7 +94,9 @@ Real-time FPS maintained: ~20–25 FPS (depending on hardware)
 
 ## 📷 Demo
 
-[📹 Watch video](demo/parking_management.avi)
+<p align="center">
+  <img src="image/demo.jpg" alt="demo" width="60%">
+</p>
 
 ## 📚 References
 
