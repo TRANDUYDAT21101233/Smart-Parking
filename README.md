@@ -40,7 +40,7 @@ To address this, we applied **Transfer Learning** using YOLO:
 - After training, the model showed **significant improvements** in detection accuracy.
 
 <p align="center">
-  <img src="runs/detect/predict/pred_bestpt.png" alt="using base model" width="60%">
+  <img src="runs/detect/predict/pred_bestpt.png" alt="using best model" width="60%">
 </p>
 
 We then **integrated** the fine-tuned model back into YOLO's detection pipeline, maintaining YOLO's real-time performance while achieving **higher precision**.
@@ -73,7 +73,9 @@ Real-time FPS maintained: ~20–25 FPS (depending on hardware)
 
 ## 📷 Demo
 
-[📹 Watch video](demo/parking_management.avi)
+<p align="center">
+  <img src="image/demo.jpg" alt="demo" width="60%">
+</p>
 
 ## 📚 References
 
