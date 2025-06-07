@@ -21,12 +21,13 @@ When testing with the pre-trained `yolo11.pt` model on our parking lot video dat
 - False positives (detecting non-vehicles as cars)
 - Missed detections in low-light or occluded areas
 ![using base model](runs/detect/predict/predict_yolo11n.png)
+<img src="runs/detect/predict/predict_yolo11n.png" width="50%" />
 
 Alternative attempts using **SAHI** and **Supervision** post-processing were also unsatisfactory, with no significant improvement.
 
 <p align="center">
-  <img src="runs/detect/predict/sahi_output.png" width="45%" />
-  <img src="runs/detect/predict/supervision_output.png" width="45%" />
+  <img src="runs/detect/predict/sahi_output.png" width="50%" />
+  <img src="runs/detect/predict/supervision_output.png" width="50%" />
 </p>
 
 ## ✅ Our Solution: Transfer Learning
